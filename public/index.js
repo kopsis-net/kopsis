@@ -4,7 +4,10 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.EX_PORT;
+<<<<<<< HEAD
 app.use(cors());
+=======
+>>>>>>> 3a84c3e (	modified:   frontend/src/app/app.component.html)
 app.use(cors({
   origin: '*'
 }));

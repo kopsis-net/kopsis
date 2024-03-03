@@ -1,2 +1,6 @@
 #KOPSIS-APP
-MERHABA Projelerimi burada biriktirmeye başlıyacağım
+
+
+MERHABA Projelerimi burada biriktirmeye başlıyacağım.
+
+

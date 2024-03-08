@@ -10,3 +10,61 @@
     {{ kullanici.ad }} {{ kullanici.soyad }}
   </li>
 </ul>
+
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  Button
+</button>
+<h1 class="text-3xl font-bold underline">
+  Hello world!
+</h1>
+<!-- form.component.html -->
+
+<form class="w-full max-w-md mx-auto"  (ngSubmit)="onSubmit()">
+  <div class="mb-4">
+    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+    <input type="text" [(ngModel)]="kullanici.ad" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+  </div>
+  <div class="mb-4">
+    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+    <input type="text" [(ngModel)]="kullanici.soyad" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+  </div>
+  <div class="mb-4">
+    <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
+    <textarea id="message" [(ngModel)]="kullanici.parola" name="message" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+  </div>
+  <div class="flex items-center justify-between">
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+  </div>
+</form>
+
+<!-- Navigation -->
+<nav class="bg-gray-800 py-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-white font-bold text-2xl">Logo</h1>
+    <button (click)="toggleSidebar()" class="text-white focus:outline-none md:hidden">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<div class="flex">
+  <aside class="bg-gray-800 w-64 min-h-screen p-4" [class.hidden]="!isSidebarOpen">
+    <h2 class="text-white text-xl font-semibold mb-4">Sidebar</h2>
+    <ul class="space-y-2">
+      <li><a href="#" class="text-gray-300 hover:text-white">Item 1</a></li>
+      <li><a href="#" class="text-gray-300 hover:text-white">Item 2</a></li>
+      <li><a href="#" class="text-gray-300 hover:text-white">Item 3</a></li>
+      <li><a href="#" class="text-gray-300 hover:text-white">Item 4</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-4">
+    <h1 class="text-2xl font-semibold mb-4">Main Content</h1>
+    <p>This is the main content area. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </main>
+</div>

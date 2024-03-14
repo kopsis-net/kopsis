@@ -1,12 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: [
+  content: [
     './src/**/*.html',
-    './src/**/*.ts',
+    './src/**/*.component.ts',
     // Eğer başka dosya türleriniz varsa, buraya ekleyebilirsiniz.
   ],
-  darkMode: false, // Ya da 'media' veya 'class' olarak değiştirebilirsiniz.
-  theme: {
+   theme: {
     extend: {},
   },
   variants: {

@@ -9,11 +9,18 @@ import { Observable } from 'rxjs';
   styleUrl: './app.component.css'
 })
 export class AppComponent  implements OnInit {
-  isSidebarOpen = false;
+  
+  sidebarOpen: boolean = false;
 
   toggleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
+    this.sidebarOpen = !this.sidebarOpen;
+    if (this.sidebarOpen) {
+      document.body.classList.add('sidebar-open');
+    } else {
+      document.body.classList.remove('sidebar-open');
+    }
   }
+
   kullanici: Kullanici = new Kullanici('', '', ''); // Boş bir Kullanıcı nesnesi
   kullanicilar$!: Observable<Kullanici[]>; // Kullanıcıların alınacağı değişken
 

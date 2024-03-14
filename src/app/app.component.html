@@ -37,34 +37,12 @@
   </div>
 </form>
 
-<!-- Navigation -->
-<nav class="bg-gray-800 py-4">
-  <div class="container mx-auto flex justify-between items-center">
-    <h1 class="text-white font-bold text-2xl">Logo</h1>
-    <button (click)="toggleSidebar()" class="text-white focus:outline-none md:hidden">
-      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-  </div>
-</nav>
 
-<!-- Sidebar -->
-<div class="flex">
-  <aside class="bg-gray-800 w-64 min-h-screen p-4" [class.hidden]="!isSidebarOpen">
-    <h2 class="text-white text-xl font-semibold mb-4">Sidebar</h2>
-    <ul class="space-y-2">
-      <li><a href="#" class="text-gray-300 hover:text-white">Item 1</a></li>
-      <li><a href="#" class="text-gray-300 hover:text-white">Item 2</a></li>
-      <li><a href="#" class="text-gray-300 hover:text-white">Item 3</a></li>
-      <li><a href="#" class="text-gray-300 hover:text-white">Item 4</a></li>
-    </ul>
-  </aside>
+<app-sidebar></app-sidebar>
+<div class="relative md:ml-64 bg-blueGray-100">
+  <app-navbar></app-navbar>
 
-  <!-- Main Content -->
-  <main class="flex-1 p-4">
-    <h1 class="text-2xl font-semibold mb-4">Main Content</h1>
-    <p>This is the main content area. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  </main>
+<router-outlet></router-outlet>
+
+
 </div>

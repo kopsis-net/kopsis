@@ -14,6 +14,7 @@ export class KullaniciService {
     this.kullaniciRef = db.list<Kullanici>('Kullanicilar');
   }
 
+
   // Kullanıcı ekleme
   async ekle(kullanici: Kullanici): Promise<void> {
     const snapshot = await this.kullaniciRef.push(kullanici);

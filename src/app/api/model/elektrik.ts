@@ -1,9 +1,9 @@
 
 export class Elektrik { 
   key?: string | null;
-  aktif?: string;
-  reaktif?: string;
-  kapasitif?: string;
+  active?: number; 
+  reactive?: number;
+  capacitive?: number;
   date?: string = new Date().toISOString();
   published?:boolean;
 }

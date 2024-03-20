@@ -29,8 +29,9 @@ export class ElektrikService {
     return this.elkRef.push(elektrik);
   }
 
-  update(key: string, value: any): Promise<void> {
-    return this.elkRef.update(key, value).then((result: any) => {
+  async update(key: string, value: any): Promise<void> {
+    try {
+      const result = await this.elkRef.update(key, value);
       this.UserData = result;
       this.ngZone.run(() => {
         Swal.fire({
@@ -42,22 +43,25 @@ export class ElektrikService {
           timer: 14500,
         });
       });
-    })
-    .catch((error) => {
+    } catch (error) {
       Swal.fire({
         position: 'top-end',
         title: 'HATA!',
-        text: error,
+        text: "Kaydınız Yapılamadı", // Hatanın mesaj özelliğini kullanıyoruz
         icon: "error",
         showConfirmButton: false,
         timer: 4500,
       });
-      //window.alert(error.message);
-    });
+    }
   }
 
-  delete(key: string): Promise<void> {
-    return this.elkRef.remove(key);
+  async delete(key: string): Promise<void> {
+    await this.elkRef.remove(key);
+    Swal.fire({
+      title: "Silindi!",
+      text: "Dosyanız silindi.",
+      icon: "success"
+    });
   }
 
   deleteAll(): Promise<void> {

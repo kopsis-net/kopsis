@@ -4,14 +4,15 @@
   (click)="toggleDropdown($event)"
   #btnDropdownRef
 >
-  <div class="items-center flex">
+  <div class="items-center flex" 
+  *ngIf="authService.UserData as users">
     <span
       class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"
     >
       <img
         alt="..."
         class="w-full rounded-full align-middle border-none shadow-lg"
-        src="assets/img/team-1-800x800.jpg"
+        src="{{(users.photoURL) ? users.photoURL : '/assets/dummy-user.png'}}"
       />
     </span>
   </div>

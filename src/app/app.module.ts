@@ -45,6 +45,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { CommonModule } from '@angular/common';
+import { ElektrikComponent } from './views/admin/elektrik/elektrik.component';
 
 @NgModule({
   declarations: [
@@ -78,9 +80,11 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
     SettingsComponent,
     TablesComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ElektrikComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

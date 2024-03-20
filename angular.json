@@ -35,6 +35,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "sweetalert2"
+            ],
             "outputPath": "dist/kopsis",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -57,7 +60,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "650kb",
+                  "maximumWarning": "1.20mb",
                   "maximumError": "1.20mb"
                 },
                 {

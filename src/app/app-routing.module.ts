@@ -10,6 +10,7 @@ import { LoginComponent } from './views/auth/login/login.component';
 import { RegisterComponent } from './views/auth/register/register.component';
 import { AuthGuard } from './api/auth.guard';
 import { SecureInnerPageGuard } from './api/secure-inner-page.guard';
+import { ElektrikComponent } from './views/admin/elektrik/elektrik.component';
 
 const routes: Routes = [
   // admin views
@@ -19,6 +20,7 @@ const routes: Routes = [
     canActivate: [SecureInnerPageGuard],
     children: [
       { path: "dashboard", component: DashboardComponent },
+      { path: "elektrik", component: ElektrikComponent },
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },

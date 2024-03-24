@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Eklenen satır
+import { FormsModule } from '@angular/forms'; // Eklenen satır
 
 import { environment } from '../environments/environment'; // Firebase yapılandırma bilgileri
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +23,6 @@ import { FooterAdminComponent } from './components/footers/footer-admin/footer-a
 import { FooterSmallComponent } from './components/footers/footer-small/footer-small.component';
 import { FooterComponent } from './components/footers/footer/footer.component';
 import { HeaderStatsComponent } from './components/headers/header-stats/header-stats.component';
-import { MapExampleComponent } from './components/maps/map-example/map-example.component';
 import { AdminNavbarComponent } from './components/navbars/admin-navbar/admin-navbar.component';
 import { AuthNavbarComponent } from './components/navbars/auth-navbar/auth-navbar.component';
 import { IndexNavbarComponent } from './components/navbars/index-navbar/index-navbar.component';
@@ -31,7 +30,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AdminComponent } from './layouts/admin/admin.component';
 import { AuthComponent } from './layouts/auth/auth.component';
 import { DashboardComponent } from './views/admin/dashboard/dashboard.component';
-import { MapsComponent } from './views/admin/maps/maps.component';
 import { SettingsComponent } from './views/admin/settings/settings.component';
 import { TablesComponent } from './views/admin/tables/tables.component';
 import { LoginComponent } from './views/auth/login/login.component';
@@ -47,6 +45,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { CommonModule } from '@angular/common';
 import { ElektrikComponent } from './views/admin/elektrik/elektrik.component';
+import { EStatusComponent } from './components/admin/elektrik/status/status.component';
 
 @NgModule({
   declarations: [
@@ -70,18 +69,17 @@ import { ElektrikComponent } from './views/admin/elektrik/elektrik.component';
     CardStatsComponent,
     CardTableComponent,
     HeaderStatsComponent,
-    MapExampleComponent,
     AuthNavbarComponent,
     AdminNavbarComponent,
     IndexNavbarComponent,
     AdminComponent,
     AuthComponent,
-    MapsComponent,
     SettingsComponent,
     TablesComponent,
     LoginComponent,
     RegisterComponent,
-    ElektrikComponent
+    ElektrikComponent,
+    EStatusComponent
   ],
   imports: [
     CommonModule,

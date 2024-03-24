@@ -3,12 +3,18 @@ import { Elektrik } from '../../../api/model/elektrik';
 import { ElektrikService } from '../../../api/elektrik.service';
 import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-elektrik',
   templateUrl: './elektrik.component.html'
 })
 export class ElektrikComponent implements OnInit {
+
+
+
+
+  
   @ViewChild('formRef') formRef!: NgForm;
 
   resetform() {
@@ -17,23 +23,31 @@ export class ElektrikComponent implements OnInit {
     this.tutoriale.key = null;
   }
   @Input() color: string = 'light';
+
+
   tutorials?: Elektrik[];
   tutoriale: Elektrik = new Elektrik();
   isEditMode: boolean = false;
 
+
+  elektrikVerileri: Elektrik[] = [];
+
   constructor(private tutorialService: ElektrikService) { }
 
   ngOnInit(): void {
-    this.retrieveTutorials();
+    this.tutorialService.getElektrikVerileri().subscribe(veriler => {
+      this.elektrikVerileri = veriler;
+    });
+
+    
+
   }
 
-  retrieveTutorials(): void {
-    this.tutorialService.getAll().snapshotChanges().subscribe((data) => {
-      this.tutorials = data.map((item) => {
-        return { key: item.payload.key, ...item.payload.val() } as Elektrik;
-      });
-    });
-  }
+
+
+
+
+
 
   selectItem(elektrik: Elektrik): void {
     this.tutoriale = { ...elektrik }; // Clone the selected Elektrik object to avoid reference issues
@@ -102,8 +116,8 @@ export class ElektrikComponent implements OnInit {
         this.resetform()
       }
     });
-
-
-
   }
+
+
+
 }

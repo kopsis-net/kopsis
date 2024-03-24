@@ -1,7 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './layouts/admin/admin.component';
-import { MapsComponent } from './views/admin/maps/maps.component';
 import { SettingsComponent } from './views/admin/settings/settings.component';
 import { TablesComponent } from './views/admin/tables/tables.component';
 import { DashboardComponent } from './views/admin/dashboard/dashboard.component';
@@ -23,7 +22,6 @@ const routes: Routes = [
       { path: "elektrik", component: ElektrikComponent },
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
-      { path: "maps", component: MapsComponent },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },// auth views

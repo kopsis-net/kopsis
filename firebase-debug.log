@@ -1,0 +1,22 @@
+[debug] [2024-03-22T19:30:58.063Z] ----------------------------------------------------------------------
+[debug] [2024-03-22T19:30:58.075Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2024-03-22T19:30:58.076Z] CLI Version:   13.5.1
+[debug] [2024-03-22T19:30:58.076Z] Platform:      linux
+[debug] [2024-03-22T19:30:58.076Z] Node Version:  v20.11.1
+[debug] [2024-03-22T19:30:58.076Z] Time:          Fri Mar 22 2024 22:30:58 GMT+0300 (GMT+03:00)
+[debug] [2024-03-22T19:30:58.076Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-22T19:30:58.079Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-03-22T19:30:58.175Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-22T19:30:58.175Z] > authorizing via signed-in user (kopsis.net@gmail.com)
+[debug] [2024-03-22T19:30:58.175Z] [iam] checking project kopsis-app for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2024-03-22T19:30:58.176Z] > refreshing access token with scopes: []
+[debug] [2024-03-22T19:30:58.177Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-03-22T19:30:58.177Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-22T19:30:58.565Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-03-22T19:30:58.565Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-22T19:30:58.571Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/kopsis-app:testIamPermissions [none]
+[debug] [2024-03-22T19:30:58.571Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/kopsis-app:testIamPermissions x-goog-quota-user=projects/kopsis-app
+[debug] [2024-03-22T19:30:58.571Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kopsis-app:testIamPermissions {"permissions":["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}
+[debug] [2024-03-22T19:30:58.904Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-03-22T19:30:58.905Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}

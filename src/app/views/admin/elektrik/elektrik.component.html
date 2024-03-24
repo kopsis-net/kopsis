@@ -58,13 +58,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let elektrik of tutorials" (click)="selectItem(elektrik)">
+                        <tr *ngFor="let elektrik of elektrikVerileri" (click)="selectItem(elektrik)">
                             <th
                                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
 
                                 <span class="ml-3 font-bold"
                                     [class]="color === 'light' ? 'text-blueGray-600' : 'text-white'">
-                                    {{ elektrik.date}}
+                                    {{ elektrik.date| date: 'dd.MM.yyyy HH:mm'}}
                                 </span>
                             </th>
                             <td
